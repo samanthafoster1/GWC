@@ -1,0 +1,26 @@
+{% extends 'amp/header.html' %}
+
+{% block content %}
+  <h2>Settings</h2>
+
+
+
+  <h3>Spotify</h3>
+  {% if spotify_login %}
+    <p>Connected as  @{{ spotify_login.extra_data }}</p>
+    {% if can_disconnect %}
+      <form method="post" action="{% url 'social:disconnect' 'spotify' %}">
+        {% csrf_token %}
+        <button type="submit">Disconnect from Spotify</button>
+      </form>
+    {% else %}
+      <button type="button" disabled>Disconnect from Spotify</button>
+      <p style="color: red">You must <a href="{% url 'password' %}">define a password</a> for your account before disconnecting from Spotify.</p>
+    {% endif %}
+  {% else %}
+    <a href="{% url 'social:begin' 'spotify' %}">Connect to Spotify</a>
+  {% endif %}
+
+
+
+{% endblock %}
