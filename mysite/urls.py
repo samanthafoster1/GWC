@@ -32,6 +32,5 @@ urlpatterns = [
     url(r'^settings/$', core_views.settings, name='settings'),
     url(r'^settings/password/$', core_views.password, name='password'),
     url(r'^oauth/', include('social_django.urls', namespace='social')),
-    
 
 ]
