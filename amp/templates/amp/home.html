@@ -2,6 +2,10 @@
 
 {% block content %}
 <p> Welcome to AMP, a place to connect to others based on music!</p>
+{% for playlist in playlists %}
+{{ playlist.username }}
 
+<a href='{%url 'playlist' pk=playlist.pk%}'>{{playlist.name}}</a>
+{% endfor %}
 {% include 'amp/includes/htmlsnippet.html' %}
 {% endblock %}

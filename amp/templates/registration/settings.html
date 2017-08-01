@@ -7,7 +7,7 @@
 
   <h3>Spotify</h3>
   {% if spotify_login %}
-    <p>Connected as  @{{ spotify_login.extra_data }}</p>
+    <p>Connected as  @{{ spotify_login.extra_data.access_token }}</p>
     {% if can_disconnect %}
       <form method="post" action="{% url 'social:disconnect' 'spotify' %}">
         {% csrf_token %}

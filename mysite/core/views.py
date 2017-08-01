@@ -5,6 +5,9 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 
 from social_django.models import UserSocialAuth
+from amp.models import Playlist
+import spotipy
+import spotipy.util as util
 
 def signup(request):
     if request.method == 'POST':
@@ -16,6 +19,7 @@ def signup(request):
                 password=form.cleaned_data.get('password1')
             )
             login(request, user)
+            print(user)
             return redirect('home')
     else:
         form = UserCreationForm()
