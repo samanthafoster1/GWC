@@ -6,7 +6,8 @@ def index (request) :
 def profile (request):
     return render (request, 'amp/basic.html', {'content':['Message me to connect','samanthafoster223@gmail.com'] })
 
-def messaging (request) :
-    return render (request, 'amp/messaging.html', { 'content': ['Text me']})
+def messaging(request) :
+    return render (request, 'amp/messaging.html', { 'content': ['Text me  ']})
 
 # Create your views here.
+x
