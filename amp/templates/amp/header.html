@@ -4,7 +4,7 @@
 <head>
 	<title>AMP</title>
 	<meta charset="utf-8" />
-	{% load staticfiles %}
+	{% load static %}
 	<link rel="stylesheet" href="{% static 'amp/css/bootstrap.min.css' %}" type = "text/css"/>
 	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
 
@@ -22,6 +22,7 @@
 			  <div class="col-sm-2">
 				  <br>
 				  <center>
+						<a href='/'>
 					<img src="{% static 'amp/img/profile.jpg' %}" class="responsive-img" style='max-height:100px;' alt="profile">
 				  </center>
 			  </div>
@@ -44,27 +45,26 @@
 			  <ul class="nav nav-pills nav-stacked">
 				<li><a href='/login/'>Login</a></li>
 				<li><a href='/signup/'>Sign Up</a></li>
-				<li><a href='/'>Matches</a></li>
+				<li><a href='/matches/'>Matches</a></li>
 				<li><a href='/messaging/'>Messaging</a></li>
 				<li><a href='/profile/'>Profile</a></li>
 				<li><a href='/settings/'>Settings</a></li>
+				<li><a href='/logout/'>Log Out </a></li>
 			  </ul>
 			</div> <!--well bs-sidebar affix-->
 		  </div> <!--col-sm-2-->
 		  <div class="col-sm-10">
 
-			<div class='container-fluid'>
+
 			<br><br>
 			   {% block content %}
 			   {% endblock %}
-			</div>
+
 		  </div>
 		</div>
 	</div>
 	<footer>
-		<div class="container-fluid" style='margin-left:15px'>
-			<p><a href="#" target="blank">Contact</a> | <a href="#" target="blank">LinkedIn</a> | <a href="#" target="blank">Twitter</a> | <a href="#" target="blank">Google+</a></p>
-		</div>
+
 	</footer>
 
 </body>

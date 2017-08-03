@@ -1,13 +1,14 @@
 {% extends "amp/header.html" %}
 
 {% block content %}
-<p> Welcome to AMP, a place to connect to others based on music!</p>
-<p> A place to mix, match and more!</p>
+  <p> Welcome to AMP, a place to connect to others based on music!</p>
+  {% if spotify_login %}
+    {% for playlist in playlists %}
+      <p><a href='{%url 'playlist' pk=playlist.pk%}'>{{playlist.name}}</a> by {{ playlist.username }}
+      </p>
 
-{% for playlist in playlists %}
-{{ playlist.username }}
 
-<a href='{%url 'playlist' pk=playlist.pk%}'>{{playlist.name}}</a>
-{% endfor %}
-{% include 'amp/includes/htmlsnippet.html' %}
+    {% endfor %}
+    {% include 'amp/includes/htmlsnippet.html' %}
+  {% endif %}
 {% endblock %}
